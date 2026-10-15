@@ -1,0 +1,44 @@
+name: Deploy demo to GitHub Pages
+
+# Запускается при push в main
+on:
+  push:
+    branches: [main]
+
+  # Или вручную через вкладку Actions
+  workflow_dispatch:
+
+# Права: нужно писать в gh-pages
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Клонировать репо
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 2. Установить Node.js 20
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # 3. Установить зависимости
+      - name: Install dependencies
+        run: npm install
+
+      # 4. Собрать демку (vite build)
+      - name: Build demo
+        run: npm run build:demo
+
+      # 5. Задеплоить dist-demo/ на gh-pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist-demo
+          publish_branch: gh-pages
