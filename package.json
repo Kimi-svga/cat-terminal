@@ -1,0 +1,37 @@
+{
+  "name": "cats-terminal",
+  "version": "0.1.0",
+  "description": "Terminal engine for Telegram Mini Apps. Zero dependencies.",
+  "author": "Kimi-svga",
+  "license": "MIT",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./styles.css": "./src/styles/terminal.css"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "terminal",
+    "telegram",
+    "mini-app",
+    "typescript",
+    "cli",
+    "tma"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kimi-svga/cats-terminal.git"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+} 
