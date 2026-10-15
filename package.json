@@ -1,5 +1,5 @@
 {
-  "name": "cats-terminal",
+  "name": "cat-terminal",
   "version": "0.1.0",
   "description": "Terminal engine for Telegram Mini Apps. Zero dependencies.",
   "author": "Kimi-svga",
@@ -26,7 +26,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/kimi-svga/cats-terminal.git"
+    "url": "https://github.com/kimi-svga/cat-terminal.git"
   },
   "scripts": {
     "typecheck": "tsc --noEmit"
